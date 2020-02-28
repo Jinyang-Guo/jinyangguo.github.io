@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<style type="text/css">
+    #demo {
+        width: 20%;
+        height: 100px;
+        position:absolute;
+        border-radius:50px;
+    }
+</style>
+ 
+<script type="text/javascript">
+    window.onload = function(){
+        var demo = document.getElementById('demo');
+        var sx = sy = 10;
+        var x = y = 0;
+ 
+        function move(){
+            if(document.documentElement.clientWidth - demo.offsetWidth-10 < x || x < 0){
+                sx = -sx;
+            }
+ 
+            if(document.documentElement.clientHeight - demo.offsetHeight-10 < y || y < 0){
+                sy = -sy;
+            }
+ 
+            x = demo.offsetLeft + sx;
+            y = demo.offsetTop + sy;
+ 
+            demo.style.left = x + 'px';
+            demo.style.top = y + 'px';
+        }
+ 
+        // var timer = setInterval(move, 100);
+ 
+        // demo.onmouseover = function(){
+        //     clearInterval(timer);
+        // }
+ 
+        // demo.onmouseout = function(){
+        //     timer = setInterval(move, 100);
+        // }
+    }
+</script>
+ 
+<!-- <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/mantpl/img/base/loading_72b1da62.gif" id="demo" /> -->
+<div id="demo">
+    <p>The SRDS Steering Committee is aware of the current medical situation in China, and related travel advisories. It is monitoring the situation and prepared to re-locate the conference, should this prove necessary</p>
+</div>
+ 
+</body>
+</html>
